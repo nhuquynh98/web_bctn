@@ -1,0 +1,702 @@
+﻿@model webMVC.Models.DAO
+
+@{
+    ViewBag.Title = "Index";
+    var db = Model as webMVC.Models.DAO;
+    string[] mausanphams = db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.sanpham.masp).mausp.Split(',');
+}
+
+<!-- page banner area start -->
+<div class="page-banner">
+    <img src="~/assets/img/slider/bg1.png" alt="Page Banner" />
+</div>
+<!-- page banner area end -->
+<!-- product details area start -->
+<section class="product-details section-padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="left">
+                    <!-- Single-pro-slider Big-photo start -->
+                    <div class="large-slider zoom-gallery">
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <div>
+                                <img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.sanpham.masp).hinh570x603" alt="" />
+                                <a href="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.sanpham.masp).hinh570x603" title="@db.sanpham.tensp @i"><img src="~/assets/img/icon/zoom.png" alt="" /></a>
+                            </div>
+                        }
+                    </div>
+                    <!-- Single-pro-slider Big-photo end -->
+                    <!-- Single-pro-slider Small-photo start -->
+                    <div class="thumb-slider slider-nav">
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <div>
+                                <img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.sanpham.masp).hinh570x603" alt="" />
+                            </div>
+                        }
+                    </div>
+                    <!-- Single-pro-slider Small-photo end -->
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="right">
+                    <div class="singl-pro-title">
+                        <h3>@db.sanpham.tensp</h3>
+                        <h1>@db.sanpham.gia @db.sanpham.donvi</h1>
+                        <hr />
+                        <p>@db.sanpham.mota</p>
+                        <hr />
+                        <div class="color-brand clearfix">
+                            <div class="s-select">
+                                <div class="custom-select">
+                                    <input id="maspduocchon" type="hidden" value="@db.sanpham.masp">
+                                    <select id="mauspduocchon" class="form-control">
+                                        @foreach (var item in mausanphams)
+                                        {
+                                            <option>@item.Trim()</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="s-select">
+                                <div class="custom-select">
+                                    <select class="form-control">
+                                        <option>Brend</option>
+                                        <option>Men </option>
+                                        <option>Fashion </option>
+                                        <option>Shirt</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="s-select s-plus-minus">
+                                <form action="#" method="POST">
+                                    <div class="plus-minus">
+                                        <a class="dec qtybutton">-</a>
+                                        <input id="slspduocchon" type="text" value="1" name="qtybutton" class="plus-minus-box">
+                                        <a class="inc qtybutton">+</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="actions-btn">
+                            <ul class="clearfix text-center">
+                                <li>
+                                    <a id="themgiohang" href="#" style="padding: 0px;"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                </li>
+                                <li>
+                                    <a href="cart.html"><i class="fa fa-heart-o"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-compress"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-share-alt"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr />
+                        <div class="categ-tag">
+                            <ul class="clearfix">
+                                <li>
+                                    CATEGORIES:
+                                    <a href="#">@db.loaisp.TenLSP</a>
+                                </li>
+                                <li>
+                                    TAG:
+                                    <a href="#">@db.loaisp.mota</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pro-des-tab">
+                    @if (db.sanpham.MaLSP == "spdt")
+                    {
+                    <div class="tab-menu">
+                        <ul>
+                            <li class="active">
+                                <a data-toggle="tab" href="#manhinh">Màn hình</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#camerasau">Camera sau</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#cameratruoc">Camera trước</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#hedieuhanh">Hệ điều hành - CPU</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#bonho">Bộ nhớ & Lưu trữ</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#ketnoi">Kết nối</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#thietketrongluong">Thiết kế & Trọng lượng</a>
+                            </li>
+                            @*<li>
+                                <a data-toggle="tab" href="#thongtinsac">Thông tin pin & Sạc</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#Tienich">Tiện ích</a>
+                            </li>*@
+                        </ul>
+                    </div>
+                    <div class="tab-content margin50">
+                        <div class="tab-pane fade in active" id="manhinh">
+                            <div class="specific-pro">
+                                <ul>
+                                    <li>
+                                        <span>Công nghệ màn hình</span>
+                                        <p>@db.manhinh.congnghemanhinh</p>
+                                    </li>
+                                    <li>
+                                        <span>Độ phân giải</span>
+                                        <p>@db.manhinh.dophangiai</p>
+                                    </li>
+                                    <li>
+                                        <span>Màn hình rộng</span>
+                                        <p>@db.manhinh.manhinhrong</p>
+                                    </li>
+                                    <li>
+                                        <span>Mặt kính cảm ứng</span>
+                                        <p>@db.manhinh.matkinhcamung</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in" id="camerasau">
+                            <div class="specific-pro">
+                                <ul>
+                                    <li>
+                                        <span>Độ phân giải</span>
+                                        <p>@db.camerasau.dophangiai</p>
+                                    </li>
+                                    <li>
+                                        <span>Quay phim</span>
+                                        <p>@db.camerasau.quayphim</p>
+                                    </li>
+                                    <li>
+                                        <span>Đèn Flash</span>
+                                        <p>@db.camerasau.denflash</p>
+                                    </li>
+                                    <li>
+                                        <span>Chụp ảnh nâng cao</span>
+                                        <p>@db.camerasau.chupanhnangcao</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in" id="cameratruoc">
+                            <div class="specific-pro">
+                                <ul>
+                                    <li>
+                                        <span>Độ phân giải</span>
+                                        <p>@db.cameratruoc.dophangiai</p>
+                                    </li>
+                                    <li>
+                                        <span>Videocall</span>
+                                        <p>@db.cameratruoc.videocall</p>
+                                    </li>
+                                    <li>
+                                        <span>Thông tin khác</span>
+                                        <p>@db.cameratruoc.thongtinkhac</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in" id="hedieuhanh">
+                            <div class="specific-pro">
+                                <ul>
+                                    <li>
+                                        <span>Hệ điều hành</span>
+                                        <p>@db.hedieuhanh.hedieuhanh1</p>
+                                    </li>
+                                    <li>
+                                        <span>Chipset (hãng SX CPU)</span>
+                                        <p>@db.hedieuhanh.chipset</p>
+                                    </li>
+                                    <li>
+                                        <span>Tốc độ CPU</span>
+                                        <p>@db.hedieuhanh.tocdoCPU</p>
+                                    </li>
+                                    <li>
+                                        <span>Chip đồ họa (GPU)</span>
+                                        <p>@db.hedieuhanh.chipdohoa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in" id="bonho">
+                            <div class="specific-pro">
+                                <ul>
+                                    <li>
+                                        <span>RAM</span>
+                                        <p>@db.bonho.ram</p>
+                                    </li>
+                                    <li>
+                                        <span>Bộ nhớ trong</span>
+                                        <p>@db.bonho.bonhotrong</p>
+                                    </li>
+                                    <li>
+                                        <span>Bộ nhớ còn lại (khả dụng)</span>
+                                        <p>@db.bonho.bonhokhadung</p>
+                                    </li>
+                                    <li>
+                                        <span>Thẻ nhớ ngoài</span>
+                                        <p>@db.bonho.thenhongoai</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in" id="ketnoi">
+                            <div class="specific-pro">
+                                <ul>
+                                    <li>
+                                        <span>Mạng di động</span>
+                                        <p>@db.ketnoi.mangdidong</p>
+                                    </li>
+                                    <li>
+                                        <span>SIM</span>
+                                        <p>@db.ketnoi.sim</p>
+                                    </li>
+                                    <li>
+                                        <span>Wifi</span>
+                                        <p>@db.ketnoi.wifi</p>
+                                    </li>
+                                    <li>
+                                        <span>GPS</span>
+                                        <p>@db.ketnoi.GPS</p>
+                                    </li>
+                                    <li>
+                                        <span>Bluetooth</span>
+                                        <p>@db.ketnoi.Bluetooth</p>
+                                    </li>
+                                    <li>
+                                        <span>Cổng kết nối/sạc</span>
+                                        <p>@db.ketnoi.boSac</p>
+                                    </li>
+                                    <li>
+                                        <span>Jack tai nghe</span>
+                                        <p>@db.ketnoi.jackTaiNghe</p>
+                                    </li>
+                                    <li>
+                                        <span>Kết nối khác</span>
+                                        <p>@db.ketnoi.ketNoiKhac</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in" id="thietketrongluong">
+                            <div class="specific-pro">
+                                <ul>
+                                    <li>
+                                        <span>Thiết kế</span>
+                                        <p>@db.thietketrongluong.thietke</p>
+                                    </li>
+                                    <li>
+                                        <span>Chất liệu</span>
+                                        <p>@db.thietketrongluong.chatlieu</p>
+                                    </li>
+                                    <li>
+                                        <span>Kích thước</span>
+                                        <p>@db.thietketrongluong.kichthuoc</p>
+                                    </li>
+                                    <li>
+                                        <span>Trọng lượng</span>
+                                        <p>@db.thietketrongluong.trongluong</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    }
+                    @if (db.sanpham.MaLSP == "spmtb")
+                    {
+                        <div class="tab-menu">
+                            <ul>
+                                <li class="active">
+                                    <a data-toggle="tab" href="#manhinh">Màn hình</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#chupanh">Chụp ảnh & Quay phim</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#cauhinh">Cấu hình</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#ketnoi">Kết nối</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#chucnangkhac">Chức năng khác</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#thietkevatrongluong">Thiết kế & Trọng lượng</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#pinvadungluong">Pin & Dung lượng</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content margin50">
+                            <div class="tab-pane fade in active" id="manhinh">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Công nghệ màn hình</span>
+                                            <p>@db.manhinh.congnghemanhinh</p>
+                                        </li>
+                                        <li>
+                                            <span>Độ phân giải</span>
+                                            <p>@db.manhinh.dophangiai</p>
+                                        </li>
+                                        <li>
+                                            <span>Kích thước màn hình</span>
+                                            <p>@db.manhinh.manhinhrong</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in" id="chupanh">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Camera sau</span>
+                                            <p>@db.camerasau.dophangiai</p>
+                                        </li>
+                                        <li>
+                                            <span>Quay phim</span>
+                                            <p>@db.camerasau.quayphim</p>
+                                        </li>
+                                        <li>
+                                            <span>Tính năng camera</span>
+                                            <p>@db.camerasau.chupanhnangcao</p>
+                                        </li>
+                                        <li>
+                                            <span>Camera trước</span>
+                                            <p>@db.cameratruoc.thongtinkhac</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in" id="cauhinh">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Hệ điều hành</span>
+                                            <p>@db.hedieuhanh.hedieuhanh1</p>
+                                        </li>
+                                        <li>
+                                            <span>Loại CPU (Chipset)</span>
+                                            <p>@db.hedieuhanh.chipset</p>
+                                        </li>
+                                        <li>
+                                            <span>Tốc độ CPU</span>
+                                            <p>@db.hedieuhanh.tocdoCPU</p>
+                                        </li>
+                                        <li>
+                                            <span>Chip đồ hoạ (GPU)</span>
+                                            <p>@db.hedieuhanh.chipdohoa</p>
+                                        </li>
+                                        <li>
+                                            <span>RAM</span>
+                                            <p>@db.bonho.ram</p>
+                                        </li>
+                                        <li>
+                                            <span>Bộ nhớ trong (ROM)</span>
+                                            <p>@db.bonho.bonhotrong</p>
+                                        </li>
+                                        <li>
+                                            <span>Bộ nhớ khả dụng</span>
+                                            <p>@db.bonho.bonhokhadung</p>
+                                        </li>
+                                        <li>
+                                            <span>Thẻ nhớ ngoài</span>
+                                            <p>@db.bonho.thenhongoai</p>
+                                        </li>
+                                        <li>
+                                            <span>Hỗ trợ thẻ tối đa</span>
+                                            <p>@db.bonho.hotrothetoida</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in" id="ketnoi">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Loại SIM</span>
+                                            <p>@db.ketnoi.sim</p>
+                                        </li>
+                                        <li>
+                                            <span>Mạng di động</span>
+                                            <p>@db.ketnoi.mangdidong</p>
+                                        </li>
+                                        <li>
+                                            <span>WiFi</span>
+                                            <p>@db.ketnoi.wifi</p>
+                                        </li>
+                                        <li>
+                                            <span>Bluetooth</span>
+                                            <p>@db.ketnoi.Bluetooth</p>
+                                        </li>
+                                        <li>
+                                            <span>GPS</span>
+                                            <p>@db.ketnoi.GPS</p>
+                                        </li>
+                                        <li>
+                                            <span>Cổng kết nối/sạc</span>
+                                            <p>@db.ketnoi.boSac</p>
+                                        </li>
+                                        <li>
+                                            <span>Jack tai nghe</span>
+                                            <p>@db.ketnoi.jackTaiNghe</p>
+                                        </li>
+                                        <li>
+                                            <span>Kết nối khác</span>
+                                            <p>@db.ketnoi.jackTaiNghe</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in" id="chucnangkhac">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Ghi âm</span>
+                                            <p>@db.tienich.ghiam</p>
+                                        </li>
+                                        <li>
+                                            <span>Radio</span>
+                                            <p>@db.tienich.radio</p>
+                                        </li>
+                                        <li>
+                                            <span>Tính năng đặc biệt</span>
+                                            <p>@db.tienich.tinhnangdacbiet</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in" id="thietkevatrongluong">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Chất liệu</span>
+                                            <p>@db.thietketrongluong.chatlieu</p>
+                                        </li>
+                                        <li>
+                                            <span>Kích thước</span>
+                                            <p>@db.thietketrongluong.kichthuoc</p>
+                                        </li>
+                                        <li>
+                                            <span>Trọng lượng</span>
+                                            <p>@db.thietketrongluong.trongluong</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in" id="pinvadungluong">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Loại pin</span>
+                                            <p>@db.thongtinsac.loaipin</p>
+                                        </li>
+                                        <li>
+                                            <span>Dung lượng pin</span>
+                                            <p>@db.thongtinsac.dungluongpin</p>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @if (db.sanpham.MaLSP == "spdh")
+                    {
+                        <div class="tab-menu">
+                            <ul>
+                                <li class="active">
+                                    <a data-toggle="tab" href="#manhinh">Màn hình</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#cauhinh">Cấu hình</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#thongtinkhac">Thông tin khác</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content margin50">
+                            <div class="tab-pane fade in active" id="manhinh">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Công nghệ màn hình</span>
+                                            <p>@db.manhinh.congnghemanhinh</p>
+                                        </li>
+                                        <li>
+                                            <span>Độ phân giải</span>
+                                            <p>@db.manhinh.dophangiai</p>
+                                        </li>
+                                        <li>
+                                            <span>Màn hình rộng</span>
+                                            <p>@db.manhinh.manhinhrong</p>
+                                        </li>
+                                        <li>
+                                            <span>Chất liệu mặt</span>
+                                            <p>@db.thietketrongluong.chatlieu</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in" id="cauhinh">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Hệ điều hành</span>
+                                            <p>@db.hedieuhanh.hedieuhanh1</p>
+                                        </li>
+                                        <li>
+                                            <span>Tốc độ CPU</span>
+                                            <p>@db.hedieuhanh.tocdoCPU</p>
+                                        </li>
+                                        <li>
+                                            <span>Cổng sạc)</span>
+                                            <p>@db.ketnoi.boSac</p>
+                                        </li>
+                                        <li>
+                                            <span>Kết nối khác</span>
+                                            <p>@db.ketnoi.ketNoiKhac</p>
+                                        </li>
+                                        <li>
+                                            <span>Dung lượng pin</span>
+                                            <p>@db.thongtinsac.dungluongpin</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in" id="thongtinkhac">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Kích thước</span>
+                                            <p>@db.thietketrongluong.kichthuoc</p>
+                                        </li>
+                                        <li>
+                                            <span>Trọng lượng</span>
+                                            <p>@db.thietketrongluong.trongluong</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>     
+                    }
+                    @if (db.sanpham.MaLSP == "sptn")
+                    {
+                        <div class="tab-menu">
+                            <ul>
+                                <li class="active">
+                                    <a data-toggle="tab" href="#thongsokithuat">Thông số kỹ thuật</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content margin50">
+                            <div class="tab-pane fade in active" id="thongsokithuat">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Kết nối cùng lúc:</span>
+                                            <p>@db.ketnoi.ketNoiKhac</p>
+                                        </li>
+                                        <li>
+                                            <span>Trọng lượng:</span>
+                                            <p>@db.thietketrongluong.trongluong</p>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @if (db.sanpham.MaLSP == "spp")
+                    {
+                        <div class="tab-menu">
+                            <ul>
+                                <li class="active">
+                                    <a data-toggle="tab" href="#thongsokithuat">Thông số kỹ thuật</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content margin50">
+                            <div class="tab-pane fade in active" id="thongsokithuat">
+                                <div class="specific-pro">
+                                    <ul>
+                                        <li>
+                                            <span>Dung lượng pin:</span>
+                                            <p>@db.thongtinsac.dungluongpin</p>
+                                        </li>
+                                        <li>
+                                            <span>Lõi pin:</span>
+                                            <p>@db.thongtinsac.loaipin</p>
+                                        </li>
+                                        <li>
+                                            <span>Trọng lượng:</span>
+                                            <p>@db.thietketrongluong.trongluong</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product details area end -->
+<!-- related product section start -->
+<section class="related-area riding-one">
+    <div class="container">
+        <div class="related-title">
+            <h5>Các sản phẩm cùng loại</h5>
+        </div>
+        <div class="row text-center margin50">
+            <div class="related-slider single-products">
+                @foreach (var item in db.Sanphams)
+                {
+                    <div class="related-item col-xs-12">
+                        <div class="product-item">
+                            <div class="pro-img">
+                                <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == item.masp).hinh270x307" alt="Product" /></a>
+                                <div class="tag-n-s">
+                                    <span>New</span>
+                                </div>
+                            </div>
+                            <div class="riding-title clearfix">
+                                <div class="product-title text-left floatleft">
+                                    <a href="#"><h5>Copenhagen Spitfire Chair</h5></a>
+                                    <div class="ratting">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star gray-star"></i>
+                                    </div>
+                                    <p><span>@item.gia @item.donvi</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- related product section end -->

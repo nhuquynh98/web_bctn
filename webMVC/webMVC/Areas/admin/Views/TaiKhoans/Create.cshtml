@@ -1,0 +1,88 @@
+﻿@model webMVC.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>Thêm mới thông tin khách hàng</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Tên đăng nhập</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TenDangnhap, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TenDangnhap, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Tên</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Họ</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Ho, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ho, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Ngày sinh</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Ngaysinh, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ngaysinh, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Số điện thoại</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Sdt, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Sdt, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Email</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Mật khẩu</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Matkhau, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Matkhau, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Phân quyền</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Phanquyen, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Phanquyen, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Tạo mới" class="btn btn-primary" />
+                    <a class="btn btn-flickr" href="/admin/TaiKhoans">quay lại</a>
+                </div>
+            </div>
+        </div>
+    }
+    

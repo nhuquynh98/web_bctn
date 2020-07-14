@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BCTNModel1StoreContainer" CdmEntityContainer="BCTNEntities">
+    <EntitySetMapping Name="binhluans">
+      <EntityTypeMapping TypeName="BCTNModel1.binhluan">
+        <MappingFragment StoreEntitySet="binhluan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="makhachhang" ColumnName="makhachhang" />
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="ngayyeuthich" ColumnName="ngayyeuthich" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bonhoes">
+      <EntityTypeMapping TypeName="BCTNModel1.bonho">
+        <MappingFragment StoreEntitySet="bonho">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maSp" ColumnName="maSp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="ram" ColumnName="ram" />
+          <ScalarProperty Name="bonhotrong" ColumnName="bonhotrong" />
+          <ScalarProperty Name="bonhokhadung" ColumnName="bonhokhadung" />
+          <ScalarProperty Name="thenhongoai" ColumnName="thenhongoai" />
+          <ScalarProperty Name="hotrothetoida" ColumnName="hotrothetoida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cameraSaus">
+      <EntityTypeMapping TypeName="BCTNModel1.cameraSau">
+        <MappingFragment StoreEntitySet="cameraSau">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maSp" ColumnName="maSp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="dophangiai" ColumnName="dophangiai" />
+          <ScalarProperty Name="quayphim" ColumnName="quayphim" />
+          <ScalarProperty Name="denflash" ColumnName="denflash" />
+          <ScalarProperty Name="chupanhnangcao" ColumnName="chupanhnangcao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cameraTruocs">
+      <EntityTypeMapping TypeName="BCTNModel1.cameraTruoc">
+        <MappingFragment StoreEntitySet="cameraTruoc">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maSp" ColumnName="maSp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="dophangiai" ColumnName="dophangiai" />
+          <ScalarProperty Name="videocall" ColumnName="videocall" />
+          <ScalarProperty Name="thongtinkhac" ColumnName="thongtinkhac" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChitietDonhangs">
+      <EntityTypeMapping TypeName="BCTNModel1.ChitietDonhang">
+        <MappingFragment StoreEntitySet="ChitietDonhang">
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="madh" ColumnName="madh" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chitietsanphams">
+      <EntityTypeMapping TypeName="BCTNModel1.chitietsanpham">
+        <MappingFragment StoreEntitySet="chitietsanpham">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="mausp" ColumnName="mausp" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="hinh87x113" ColumnName="hinh87x113" />
+          <ScalarProperty Name="hinh270x281" ColumnName="hinh270x281" />
+          <ScalarProperty Name="hinh270x290" ColumnName="hinh270x290" />
+          <ScalarProperty Name="hinh270x307" ColumnName="hinh270x307" />
+          <ScalarProperty Name="hinh270x357" ColumnName="hinh270x357" />
+          <ScalarProperty Name="hinh277x290" ColumnName="hinh277x290" />
+          <ScalarProperty Name="hinh315x255" ColumnName="hinh315x255" />
+          <ScalarProperty Name="hinh320x240" ColumnName="hinh320x240" />
+          <ScalarProperty Name="hinh320x320" ColumnName="hinh320x320" />
+          <ScalarProperty Name="hinh355x212" ColumnName="hinh355x212" />
+          <ScalarProperty Name="hinh370x285" ColumnName="hinh370x285" />
+          <ScalarProperty Name="hinh370x420" ColumnName="hinh370x420" />
+          <ScalarProperty Name="hinh370x600" ColumnName="hinh370x600" />
+          <ScalarProperty Name="hinh378x238" ColumnName="hinh378x238" />
+          <ScalarProperty Name="hinh400x300" ColumnName="hinh400x300" />
+          <ScalarProperty Name="hinh435x265" ColumnName="hinh435x265" />
+          <ScalarProperty Name="hinh445x265" ColumnName="hinh445x265" />
+          <ScalarProperty Name="hinh565x480" ColumnName="hinh565x480" />
+          <ScalarProperty Name="hinh565x566" ColumnName="hinh565x566" />
+          <ScalarProperty Name="hinh570x437" ColumnName="hinh570x437" />
+          <ScalarProperty Name="hinh570x603" ColumnName="hinh570x603" />
+          <ScalarProperty Name="hinh582x343" ColumnName="hinh582x343" />
+          <ScalarProperty Name="hinh592x378" ColumnName="hinh592x378" />
+          <ScalarProperty Name="hinh240x190" ColumnName="hinh240x190" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="donhangs">
+      <EntityTypeMapping TypeName="BCTNModel1.donhang">
+        <MappingFragment StoreEntitySet="donhang">
+          <ScalarProperty Name="madh" ColumnName="madh" />
+          <ScalarProperty Name="makh" ColumnName="makh" />
+          <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+          <ScalarProperty Name="tinhtranggiaohang" ColumnName="tinhtranggiaohang" />
+          <ScalarProperty Name="ngaydat" ColumnName="ngaydat" />
+          <ScalarProperty Name="ngaygiao" ColumnName="ngaygiao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="giohangs">
+      <EntityTypeMapping TypeName="BCTNModel1.giohang">
+        <MappingFragment StoreEntitySet="giohang">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="makhachhang" ColumnName="makhachhang" />
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="soluongdamua" ColumnName="soluongdamua" />
+          <ScalarProperty Name="ngaymua" ColumnName="ngaymua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hedieuhanhs">
+      <EntityTypeMapping TypeName="BCTNModel1.hedieuhanh">
+        <MappingFragment StoreEntitySet="hedieuhanh">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maSp" ColumnName="maSp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="hedieuhanh1" ColumnName="hedieuhanh" />
+          <ScalarProperty Name="chipset" ColumnName="chipset" />
+          <ScalarProperty Name="tocdoCPU" ColumnName="tocdoCPU" />
+          <ScalarProperty Name="chipdohoa" ColumnName="chipdohoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ketnois">
+      <EntityTypeMapping TypeName="BCTNModel1.ketnoi">
+        <MappingFragment StoreEntitySet="ketnoi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maSp" ColumnName="maSp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="mangdidong" ColumnName="mangdidong" />
+          <ScalarProperty Name="sim" ColumnName="sim" />
+          <ScalarProperty Name="wifi" ColumnName="wifi" />
+          <ScalarProperty Name="GPS" ColumnName="GPS" />
+          <ScalarProperty Name="Bluetooth" ColumnName="Bluetooth" />
+          <ScalarProperty Name="boSac" ColumnName="boSac" />
+          <ScalarProperty Name="jackTaiNghe" ColumnName="jackTaiNghe" />
+          <ScalarProperty Name="ketNoiKhac" ColumnName="ketNoiKhac" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiSanPhams">
+      <EntityTypeMapping TypeName="BCTNModel1.LoaiSanPham">
+        <MappingFragment StoreEntitySet="LoaiSanPham">
+          <ScalarProperty Name="MaLSP" ColumnName="MaLSP" />
+          <ScalarProperty Name="TenLSP" ColumnName="TenLSP" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="manhinhs">
+      <EntityTypeMapping TypeName="BCTNModel1.manhinh">
+        <MappingFragment StoreEntitySet="manhinh">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maSp" ColumnName="maSp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="congnghemanhinh" ColumnName="congnghemanhinh" />
+          <ScalarProperty Name="dophangiai" ColumnName="dophangiai" />
+          <ScalarProperty Name="manhinhrong" ColumnName="manhinhrong" />
+          <ScalarProperty Name="matkinhcamung" ColumnName="matkinhcamung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="muahangs">
+      <EntityTypeMapping TypeName="BCTNModel1.muahang">
+        <MappingFragment StoreEntitySet="muahang">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="makhachhang" ColumnName="makhachhang" />
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="soluongdamua" ColumnName="soluongdamua" />
+          <ScalarProperty Name="ngaymua" ColumnName="ngaymua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sanphams">
+      <EntityTypeMapping TypeName="BCTNModel1.sanpham">
+        <MappingFragment StoreEntitySet="sanpham">
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="MaLSP" ColumnName="MaLSP" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="donvi" ColumnName="donvi" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="slsp" ColumnName="slsp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaiKhoans">
+      <EntityTypeMapping TypeName="BCTNModel1.TaiKhoan">
+        <MappingFragment StoreEntitySet="TaiKhoan">
+          <ScalarProperty Name="makh" ColumnName="makh" />
+          <ScalarProperty Name="TenDangnhap" ColumnName="TenDangnhap" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Ho" ColumnName="Ho" />
+          <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+          <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Phanquyen" ColumnName="Phanquyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thietketrongluongs">
+      <EntityTypeMapping TypeName="BCTNModel1.thietketrongluong">
+        <MappingFragment StoreEntitySet="thietketrongluong">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maSp" ColumnName="maSp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="thietke" ColumnName="thietke" />
+          <ScalarProperty Name="chatlieu" ColumnName="chatlieu" />
+          <ScalarProperty Name="kichthuoc" ColumnName="kichthuoc" />
+          <ScalarProperty Name="trongluong" ColumnName="trongluong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thongtins">
+      <EntityTypeMapping TypeName="BCTNModel1.thongtin">
+        <MappingFragment StoreEntitySet="thongtin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="giatri" ColumnName="giatri" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thongtinsacs">
+      <EntityTypeMapping TypeName="BCTNModel1.thongtinsac">
+        <MappingFragment StoreEntitySet="thongtinsac">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maSp" ColumnName="maSp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="dungluongpin" ColumnName="dungluongpin" />
+          <ScalarProperty Name="loaipin" ColumnName="loaipin" />
+          <ScalarProperty Name="congnghePin" ColumnName="congnghePin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tieniches">
+      <EntityTypeMapping TypeName="BCTNModel1.Tienich">
+        <MappingFragment StoreEntitySet="Tienich">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="maSp" ColumnName="maSp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="baomatnangcao" ColumnName="baomatnangcao" />
+          <ScalarProperty Name="tinhnangdacbiet" ColumnName="tinhnangdacbiet" />
+          <ScalarProperty Name="ghiam" ColumnName="ghiam" />
+          <ScalarProperty Name="radio" ColumnName="radio" />
+          <ScalarProperty Name="xemphim" ColumnName="xemphim" />
+          <ScalarProperty Name="nghenhac" ColumnName="nghenhac" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yeuthiches">
+      <EntityTypeMapping TypeName="BCTNModel1.yeuthich">
+        <MappingFragment StoreEntitySet="yeuthich">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="makhachhang" ColumnName="makhachhang" />
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="ngayyeuthich" ColumnName="ngayyeuthich" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

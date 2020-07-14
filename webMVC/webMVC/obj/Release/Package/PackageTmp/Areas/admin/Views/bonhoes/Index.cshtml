@@ -1,0 +1,57 @@
+﻿@model IEnumerable<webMVC.Models.bonho>
+
+@{
+    ViewBag.Title = "Index";
+    var soluong = 0;
+}
+
+<div class="page-title">
+    <h3 class="breadcrumb-header">Thông số bộ nhớ</h3>
+</div>
+
+<div id="main-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-heading clearfix">
+                    <a class="btn btn-primary" style="margin-bottom: 10px" href="/admin/bonhoes/Create">Thêm mới thông tin mới</a>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Ram</th>
+                                <th>Bộ nhớ trong</th>
+                                <th>Bộ nhớ khả dụng</th>
+                                <th>Thẻ nhớ ngoài</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@(++soluong)</th>
+                                    <td>@Html.DisplayFor(modelItem => item.tensp)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ram)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.bonhotrong)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.bonhokhadung)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.thenhongoai)</td>
+                                    <td>
+                                        <a class="btn btn-success" href="/admin/bonhoes/Edit/@item.id">Sửa</a>
+                                        <a class="btn btn-info" href="/admin/bonhoes/Details/@item.id">Chi tiết</a>
+                                        <a class="btn btn-danger" href="/admin/bonhoes/Delete/@item.id">Xóa</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Main Wrapper -->
+
+      

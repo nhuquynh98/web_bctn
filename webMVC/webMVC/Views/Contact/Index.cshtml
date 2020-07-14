@@ -1,0 +1,94 @@
+﻿@model webMVC.Models.DAO
+
+@{
+    ViewBag.Title = "Index";
+    var db = Model as webMVC.Models.DAO;
+    var ttsdt = "";
+    var ttmail = "";
+    var ttlogo = "";
+    var ttlogo2 = "";
+    foreach (var item in db.Thongtins)
+    {
+        switch (item.id)
+        {
+            case "ttsdt":
+                ttsdt = item.giatri;
+                break;
+            case "ttmail":
+                ttmail = item.giatri;
+                break;
+            case "ttlogo":
+                ttlogo = item.giatri;
+                break;
+            case "ttlogo2":
+                ttlogo2 = item.giatri;
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+<!-- page banner area start -->
+<div class="page-banner">
+    <img src="~/assets/img/slider/bg3.png" alt="Page Banner" />
+</div>
+<!-- page banner area end -->
+
+<!-- contact area start -->
+<div class="map-contact clearfix" style="margin-top: 20px">
+    <div class="googleMap-info">
+        <div class="map-2" id="googleMap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1958.3802057543805!2d106.67624029274047!3d10.98144839428538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1387dabfe2f%3A0xb95b8e686fd76783!2zQmnhu4d0IFRo4buxIE1pbmkgUGjDuiBIw7Jh!5e0!3m2!1svi!2s!4v1594536299584!5m2!1svi!2s" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="main-contact-info">
+                        <ul class="contact-info">
+                            <li><h3>Thông tin liên hệ</h3></li>
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <div class="text">
+                                    <p>Phú Hoà, Thủ Dầu Một</p>
+                                    <p>Bình Dương, Việt Nam</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <div class="text">
+                                    <p>@ttsdt</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-paper-plane-o"></i>
+                                <div class="text">
+                                    <p>@ttmail</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="social-share contact-social">
+                                    <ul class="clearfix">
+                                        <li>
+                                            <a href="#"><i class="fa fa-google"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-behance"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contact-informaion start -->

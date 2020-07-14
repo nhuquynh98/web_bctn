@@ -1,0 +1,276 @@
+﻿@model webMVC.Areas.admin.Models.DAOADMIN
+
+@{
+    ViewBag.Title = "Details";
+    var db = Model as webMVC.Areas.admin.Models.DAOADMIN;
+}
+
+<div id="main-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-heading clearfix">
+                    <h4 class="panel-title">Thông tin chi tiết loại sản phẩm</h4>
+                    <a class="btn btn-success" href="/admin/sanphams/Edit/@db.sp.MaLSP">Sửa</a>
+                    <a class="btn btn-flickr" href="/admin/sanphams">quay lại</a>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Sản phẩm</label>
+                        <div class="form-control">@db.sp.tensp</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Giá</label>
+                        <div class="form-control">@db.sp.gia</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Đơn vị</label>
+                        <div class="form-control">@db.sp.donvi</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Số lượng hiện tại</label>
+                        <div class="form-control">@db.sp.slsp</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Mô tả</label>
+                        <textarea class="input-large form-control" id="message" rows="3" placeholder="Nhập mô tả ...">
+                            @db.sp.mota
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (db.chitietsp != null)
+    {
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-white">
+                    <div class="panel-heading clearfix">
+                        Thông tin: @db.sp.tensp
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Thuộc tính</th>
+                                    <th>Mô tả</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Màu sản phẩm
+                                    </td>
+                                    <td>
+                                        @db.chitietsp.mausp
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        mô tả
+                                    </td>
+                                    <td>
+                                        @db.chitietsp.mota
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 87x113
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh87x113" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 240x190
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh240x190" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 270x281
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh270x281" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 270x290
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh270x290" />
+                                    </td>
+                                <tr>
+                                    <td>
+                                        Hình 270x307
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh270x307" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 270x357
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh270x357" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 277x290
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh277x290" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 315x255
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh315x255" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 320x240
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh320x240" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 320x320
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh320x320" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 355x212
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh355x212" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 370x285
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh370x285" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 370x420
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh370x420" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 370x600
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh370x600" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 378x238
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh378x238" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 400x300
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh400x300" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 435x265
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh435x265" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 445x265
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh445x265" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 565x480
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh565x480" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 565x566
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh565x566" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 570x437
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh570x437" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 570x603
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh570x603" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 582x343
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh582x343" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Hình 592x378
+                                    </td>
+                                    <td>
+                                        <img src="@db.chitietsp.hinh592x378" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

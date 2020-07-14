@@ -1,0 +1,70 @@
+﻿@model webMVC.Models.hedieuhanh
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>Thêm mới thông tin hệ điều hành</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Mã sản phẩm</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.maSp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.maSp, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Tên sản phẩm</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tensp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.tensp, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Hệ điều hành</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.hedieuhanh1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.hedieuhanh1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Chipset</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.chipset, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.chipset, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Tốc độ CPU</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tocdoCPU, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.tocdoCPU, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Chip đồ họa</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.chipdohoa, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.chipdohoa, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Tạo mới" class="btn btn-primary" />
+                    <a class="btn btn-flickr" href="/admin/hedieuhanhs">quay lại</a>
+                </div>
+            </div>
+        </div>
+    }

@@ -1,0 +1,794 @@
+﻿@model webMVC.Models.DAO
+
+@{
+    ViewBag.Title = "Index";
+    var db = Model as webMVC.Models.DAO;
+
+}
+
+
+    <!-- slider section start -->
+    <div class="slider-area slider-one clearfix">
+        <div class="slider" id="mainslider">
+            <div data-src="/assets/img/slider/slider1.png">
+                <div class="d-table">
+                    <div class="d-tablecell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12"> 
+                                    <div class="slide-text">
+                                        <h1 class="animated fadeInDown">Sản phẩm điện thoại tốt nhất</h1>
+                                        <div class="shape animated flipInX">
+                                            <img src="~/assets/img/slider/shape.png" alt="" />
+                                        </div>
+                                        <h4 class="animated fadeIn">Đến với chúng tôi các bạn sẽ có những sản phẩm ưng ý</h4>
+                                        <a class="shop-btn animated fadeInUp" href="/Product/index">Xem thêm</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-src="/assets/img/slider/slider2.png">
+                <div class="d-table">
+                    <div class="d-tablecell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="slide-text">
+                                        <h1 class="animated fadeInDown">Sản phẩm điện thoại tốt nhất</h1>
+                                        <div class="shape animated flipInX">
+                                            <img src="~/assets/img/slider/shape.png" alt="" />
+                                        </div>
+                                        <h4 class="animated fadeIn">Đến với chúng tôi các bạn sẽ có những sản phẩm ưng ý</h4>
+                                        <a class="shop-btn animated fadeInUp" href="/Product/index">Xem thêm</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider section end -->
+    <!-- featured section start -->
+    <section class="featured-area featured-one section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                    <div class="section-title text-center">
+                        <h3><span>Điện thoại</span> mới</h3>
+                        <div class="shape">
+                            <img src="~/assets/img/icon/t-shape.png" alt="Title Shape" />
+                        </div>
+                        <p>Thể hiện phong cách cùng với samsung</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="featured-slider single-products">
+                    @foreach (var item in db.spDienThoai)
+                    {
+                    <div class="single-slide">
+                        <div class="padding30">
+                            <div class="product-item">
+                                <div class="pro-img">
+                                    <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == item.masp).hinh435x265" alt="" /></a>
+                                </div>
+                                <div class="actions-btn">
+                                    <ul class="clearfix">
+                                        <li>
+                                            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-title">
+                                    <a href="@Url.Action("Details","Product",new { id = item.masp })"><h5>@item.tensp</h5></a>
+                                    <p><span>@item.gia</span> @item.donvi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- featured section end -->
+    <!-- sell-up section start -->
+    <section class="sell-up-area sell-up-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <div class="shadow-l-r">
+                        <div class="sell-up-left">
+                            <h4>SẢN PHẨM HOT! </h4>
+                            <h2>SALE UP <strong>40%</strong></h2>
+                            <hr class="line" />
+                            <ul class="clearfix">
+                                <li>
+                                    <span></span> Thiết kế được làm tinh tế hơn
+                                </li>
+                                <li>
+                                    <span></span>  Trọng lượng nhẹ có thể dễ dàng mang theo
+                                </li>
+                                <li>
+                                    <span></span> Camera có độ sắc nét cao
+                                </li>
+                                <li>
+                                    <span></span> Trải nghiệm độc đáo với bút S Pen
+                                </li>
+                            </ul>
+                            <a class="shop-btn" href="shop.html">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-7">
+                    <div class="sell-up-right">
+                    @for (int i = 0; i < 2; i++)
+                    {
+                        <div class="single-sellup">
+                            <a href="@Url.Action("Details","Product",new { id = @db.spMaytinhbang[i].masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.spMaytinhbang[i].masp).hinh435x265" alt="" /></a>
+                        </div>
+                     }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- sell-up section end -->
+    <!-- riding section start -->
+    <section class="riding-area riding-one section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                    <div class="section-title text-center">
+                        <h3> PHỤ KIỆN </h3>
+                        <div class="shape">
+                            <img src="~/assets/img/icon/t-shape.png" alt="Title Shape" />
+                        </div>
+                        <p>Thiết kế gọn gàng, viền cong sang trọng tôn dáng tay hợp thời trang</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="four-item riding-slider single-products">
+                @foreach (var item in db.spDongho)
+                { 
+                        <div class="riding-item col-xs-12">
+                        <div class="product-item">
+                            <div class="pro-img">
+                                <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == item.masp).hinh270x290" alt="Product" /></a>
+                                <div class="link-icon">
+                                    <a href="@Url.Action("Details","Product",new { id = item.masp })"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="riding-title clearfix">
+                                <div class="product-title text-left floatleft">
+                                    <a href="@Url.Action("Details","Product",new { id = item.masp })"><h5>@item.tensp</h5></a>
+                                    <p><span>@item.gia</span></p>
+                                </div>
+                                <div class="actions-btn floatright">
+                                    <ul class="clearfix">
+                                        <li>
+                                            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- riding section end -->
+    <!-- discount section start -->
+    <section class="discount-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="discount-left">
+                        <h4>Khuyến mại</h4>
+                        <h2>GIẢM GIÁ <strong>LÊN TỚI 35%</strong></h2>
+                        <p>Sản phẩm đẹp</p>
+                        <a class="shop-btn" href="shop.html">Xem thêm</a>
+                        @*<div class="count-text clearfix">
+                            <ul id="countdown-1">
+                                <li>
+                                    <span class="days timenumbers">00</span>
+                                    <p class="timeRefDays timedescription">days</p>
+                                </li>
+                                <li>
+                                    <span class="hours timenumbers">00</span>
+                                    <p class="timeRefHours timedescription">hrs</p>
+                                </li>
+                                <li>
+                                    <span class="minutes timenumbers">60</span>
+                                    <p class="timeRefMinutes timedescription">mins</p>
+                                </li>
+                                <li>
+                                    <span class="seconds timenumbers">00</span>
+                                    <p class="timeRefSeconds timedescription">secs</p>
+                                </li>
+                            </ul>
+                        </div>*@
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="discount-right">
+                        <img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.spMaytinhbang[0].masp).hinh592x378" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- discount section end -->
+    <!-- best-sell section start -->
+    <section class="best-sell-area best-sell-one section-padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                    <div class="section-title text-center">
+                        <h3><span>Sản phảm</span> khác</h3>
+                        <div class="shape">
+                            <img src="~/assets/img/icon/t-shape.png" alt="Title Shape" />
+                        </div>
+                        <p>Các sản phẩm có tính nổi bất</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <div class="tab-menu">
+                        <ul>
+                            <li class="active">
+                                <a data-toggle="tab" href="#sptn">Tai nghe<span>-</span></a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#spmtb">Máy tính bảng <span>-</span></a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#spdh">Đồng hồ <span>-</span></a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#spp">Pin<span>-</span></a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#spl">Loa<span>-</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center tab-content">
+                    <div class="tab-pane fade in active" id="sptn">
+                        <div class="four-item single-products">
+                            @foreach (var item in db.spTainghe)
+                            {
+                            <div class="col-xs-12">
+                                <div class="product-item">
+                                    <div class="pro-img">
+                                        <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == item.masp).hinh315x255" alt="Product" /></a>
+                                    </div>
+                                    <div class="actions-btn">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="riding-title clearfix">
+                                        <div class="product-title">
+                                            <a href="@Url.Action("Details","Product",new { id = item.masp })"><h5>@item.tensp</h5></a>
+                                            <p>Price: <span>@item.gia </span><del>@item.gia</del></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="spmtb">
+                        <div class="four-item single-products">
+                            @foreach (var item in db.spMaytinhbang)
+                            {
+                                <div class="col-xs-12">
+                                    <div class="product-item">
+                                        <div class="pro-img">
+                                            <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == item.masp).hinh315x255" alt="Product" /></a>
+                                        </div>
+                                        <div class="actions-btn">
+                                            <ul class="clearfix">
+                                                <li>
+                                                    <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="riding-title clearfix">
+                                            <div class="product-title">
+                                                <a href="@Url.Action("Details","Product",new { id = item.masp })"><h5>@item.tensp</h5></a>
+                                                <p>Price: <span>@item.gia </span><del>@item.gia</del></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="spdh">
+                        <div class="four-item single-products">
+                            @foreach (var item in db.spDongho)
+                            {
+                                <div class="col-xs-12">
+                                    <div class="product-item">
+                                        <div class="pro-img">
+                                            <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == item.masp).hinh315x255" alt="Product" /></a>
+                                        </div>
+                                        <div class="actions-btn">
+                                            <ul class="clearfix">
+                                                <li>
+                                                    <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="riding-title clearfix">
+                                            <div class="product-title">
+                                                <a href="@Url.Action("Details","Product",new { id = item.masp })"><h5>@item.tensp</h5></a>
+                                                <p>Price: <span>@item.gia </span><del>@item.gia</del></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="spp">
+                        <div class="four-item single-products">
+                            @foreach (var item in db.spPin)
+                            {
+                                <div class="col-xs-12">
+                                    <div class="product-item">
+                                        <div class="pro-img">
+                                            <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == item.masp).hinh315x255" alt="Product" /></a>
+                                        </div>
+                                        <div class="actions-btn">
+                                            <ul class="clearfix">
+                                                <li>
+                                                    <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="riding-title clearfix">
+                                            <div class="product-title">
+                                                <a href="@Url.Action("Details","Product",new { id = item.masp })"><h5>@item.tensp</h5></a>
+                                                <p>Price: <span>@item.gia </span><del>@item.gia</del></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="spl">
+                        <div class="four-item single-products">
+                            @foreach (var item in db.spLoa)
+                            {
+                                <div class="col-xs-12">
+                                    <div class="product-item">
+                                        <div class="pro-img">
+                                            <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == item.masp).hinh315x255" alt="Product" /></a>
+                                        </div>
+                                        <div class="actions-btn">
+                                            <ul class="clearfix">
+                                                <li>
+                                                    <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="riding-title clearfix">
+                                            <div class="product-title">
+                                                <a href="@Url.Action("Details","Product",new { id = item.masp })"><h5>@item.tensp</h5></a>
+                                                <p>Price: <span>@item.gia </span><del>@item.gia</del></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <div class="view-more">
+                        <a class="shop-btn" href="shop.html">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- best-sell section end -->
+    <!-- arrival section start -->
+    <section class="arrival-area arrival-one section-padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                    <div class="section-title text-center">
+                        <h3>Sản phảm <span>mới</span></h3>
+                        <div class="shape">
+                            <img src="~/assets/img/icon/t-shape.png" alt="Title Shape" />
+                        </div>
+                        <p>Sản phẩm mới trong tuần.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid arrival-content">
+            <div class="row text-center">
+                <div class="col-xs-12 col-md-6 col-lg-4 arrival-left">
+                    <div class="single-arrival left">
+                        <div class="product-item">
+                            <div class="pro-img">
+                                <a href="@Url.Action("Details","Product",new { id = @db.spDienThoai[0].masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.spDienThoai[0].masp).hinh565x566" alt="Product" /></a>
+                            </div>
+                            <div class="tag-new">
+                                <img src="~/assets/img/products/tag.png" alt="New Tag" />
+                            </div>
+                            <div class="actions-btn">
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="arrival-title clearfix">
+                                <div class="product-title">
+                                    <a href="@Url.Action("Details","Product",new { id = @db.spDienThoai[0].masp })"><h5>@db.spDienThoai[0].tensp</h5></a>
+                                    <p>Giá: <span>@db.spDienThoai[0].gia @db.spDienThoai[0].donvi</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden-md col-lg-4 arrival-middle">
+                    <div class="single-arrival middel">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="product-item">
+                                    <div class="pro-img">
+                                        <a href="@Url.Action("Details","Product",new { id = @db.spDienThoai[0].masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.spDienThoai[0].masp).hinh320x320" alt="Product" /></a>
+                                    </div>
+                                    <div class="tag-new">
+                                        <img src="~/assets/img/products/tag.png" alt="New Tag" />
+                                    </div>
+                                    <div class="actions-btn">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="arrival-title clearfix">
+                                        <div class="product-title">
+                                            <a href="@Url.Action("Details","Product",new { id = @db.spDienThoai[0].masp })"><h5>@db.spDienThoai[0].tensp</h5></a>
+                                            <p>Giá: <span>@db.spDienThoai[0].gia @db.spDienThoai[0].donvi</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-item margin-top">
+                                    <div class="pro-img">
+                                        <a href="@Url.Action("Details","Product",new { id = @db.spDienThoai[1].masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.spDienThoai[1].masp).hinh320x320" alt="Product" /></a>
+                                    </div>
+                                    <div class="tag-new">
+                                        <img src="~/assets/img/products/tag.png" alt="New Tag" />
+                                    </div>
+                                    <div class="actions-btn">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="arrival-title clearfix">
+                                        <div class="product-title">
+                                            <a href="@Url.Action("Details","Product",new { id = @db.spDienThoai[1].masp })"><h5>@db.spDienThoai[1].tensp</h5></a>
+                                            <p>Giá: <span>@db.spDienThoai[1].gia @db.spDienThoai[1].donvi</span></p>
+                                        </div>
+                                    </div>
+                                </div>                     
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="product-item">
+                                    <div class="pro-img">
+                                        <a href="@Url.Action("Details","Product",new { id = @db.spLoa[0].masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.spLoa[0].masp).hinh320x320" alt="Product" /></a>
+                                    </div>
+                                    <div class="tag-new">
+                                        <img src="~/assets/img/products/tag.png" alt="New Tag" />
+                                    </div>
+                                    <div class="actions-btn">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="arrival-title clearfix">
+                                        <div class="product-title">
+                                            <a href="@Url.Action("Details","Product",new { id = @db.spLoa[0].masp })"><h5>@db.spLoa[0].tensp</h5></a>
+                                            <p>Giá: <span>@db.spLoa[0].gia @db.spLoa[0].donvi</span><</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-item margin-top">
+                                    <div class="pro-img">
+                                        <a href="@Url.Action("Details","Product",new { id = @db.spLoa[1].masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.spLoa[1].masp).hinh320x320" alt="Product" /></a>
+                                    </div>
+                                    <div class="tag-new">
+                                        <img src="~/assets/img/products/tag.png" alt="New Tag" />
+                                    </div>
+                                    <div class="actions-btn">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="arrival-title clearfix">
+                                        <div class="product-title">
+                                            <a href="@Url.Action("Details","Product",new { id = @db.spLoa[1].masp })"><h5>@db.spLoa[1].tensp</h5></a>
+                                            <p>Giá: <span>@db.spLoa[1].gia @db.spLoa[1].donvi</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12  col-md-6 col-lg-4 arrival-left">
+                    <div class="single-arrival right">
+                        <div class="product-item">
+                            <div class="pro-img">
+                                <a href="@Url.Action("Details","Product",new { id = @db.spDienThoai[1].masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.spDienThoai[1].masp).hinh565x566" alt="Product" /></a>
+                            </div>
+                            <div class="tag-new">
+                                <img src="~/assets/img/products/tag.png" alt="New Tag" />
+                            </div>
+                            <div class="actions-btn">
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="arrival-title clearfix">
+                                <div class="product-title">
+                                    <a href="@Url.Action("Details","Product",new { id = @db.spDienThoai[1].masp })"><h5>@db.spDienThoai[1].tensp</h5></a>
+                                    <p>Giá: <span>@db.spDienThoai[1].gia @db.spDienThoai[1].donvi</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- arrival section end -->
+    <!-- blog section start -->
+    <section class="blog-area blog-one section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                    <div class="section-title text-center">
+                        <h3>Sản phẩm <span>Loa</span></h3>
+                        <div class="shape">
+                            <img src="~/assets/img/icon/t-shape.png" alt="Title Shape" />
+                        </div>
+                        <p>Âm thanh hài hòa cùng với giai điệu bay bỏng</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <a href="@Url.Action("Details","Product",new { id = @db.spLoa[i].masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == db.spLoa[i].masp).hinh320x240" alt="Blog" /></a>
+                        </div>
+                        <div class="blog-text clearfix">
+                            <hr class="line" />
+                            <a href="single-blog.html"><h4>@db.spLoa[i].tensp</h4></a>
+                            <p><span>@db.spLoa[i].gia @db.spLoa[i].donvi</span></p>
+                            <p>Giai điệu hài hòa cùng thiên nhiên.......</p>
+                            <div class="view-more">
+                                <a class="shop-btn" href="single-blog.html">Xem thêm</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+        </div>
+    </section>
+    <!-- blog section end -->
+    <!-- quick view start -->
+    <div class="product-details quick-view modal animated zoomIn" id="quick-view">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="d-table">
+                        <div class="d-tablecell">
+                            <div class="modal-dialog">
+                                <div class="main-view modal-content">
+                                    <div class="modal-footer" data-dismiss="modal">
+                                        <span>x</span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="left">
+                                                <!-- Single-pro-slider Big-photo start -->
+                                                <div class="quick-img">
+                                                    <img src="~/assets/img/products/l1.jpg" alt="" />
+                                                </div>
+                                                <!-- Single-pro-slider Big-photo end -->
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="right">
+                                                <div class="singl-pro-title">
+                                                    <h3>GT Sensor Carbon Jenson </h3>
+                                                    <h1>$1700.00</h1>
+                                                    <hr />
+                                                    <p>doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+                                                    <hr />
+                                                    <div class="color-brand clearfix">
+                                                        <div class="s-select">
+                                                            <div class="custom-select">
+                                                                <select class="form-control">
+                                                                    <option>Color</option>
+                                                                    <option>Red </option>
+                                                                    <option>Green </option>
+                                                                    <option>Blue</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="s-select">
+                                                            <div class="custom-select">
+                                                                <select class="form-control">
+                                                                    <option>Brend</option>
+                                                                    <option>Men </option>
+                                                                    <option>Fashion </option>
+                                                                    <option>Shirt</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="s-select s-plus-minus">
+                                                            <form action="#" method="POST">
+                                                                <div class="plus-minus">
+                                                                    <a class="dec qtybutton">-</a>
+                                                                    <input type="text" value="02" name="qtybutton" class="plus-minus-box">
+                                                                    <a class="inc qtybutton">+</a>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="actions-btn">
+                                                        <ul class="clearfix text-center">
+                                                            <li>
+                                                                <a href="cart.html"><i class="fa fa-shopping-cart"></i> add to cart</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="cart.html"><i class="fa fa-heart-o"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-compress"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-share-alt"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <hr />
+                                                    <div class="categ-tag">
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                CATEGORIES:
+                                                                <a href="#">Bike,</a> <a href="#">Cycle,</a> <a href="#">Ride,</a> <a href="#">Mountain</a>
+                                                            </li>
+                                                            <li>
+                                                                TAG:
+                                                                <a href="#">Ride,</a> <a href="#">Helmet,</a> <a href="#">cycle,</a> <a href="#">bike</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- quick view end -->

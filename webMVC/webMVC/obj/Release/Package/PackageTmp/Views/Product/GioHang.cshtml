@@ -1,0 +1,117 @@
+﻿@model webMVC.Models.DAO
+
+@{
+    ViewBag.Title = "Index";
+    var db = Model as webMVC.Models.DAO;
+}
+<!-- page banner area start -->
+<div class="page-banner">
+    <img src="~/assets/img/slider/bg3.png" alt="Page Banner" />
+</div>
+<!-- page banner area end -->
+
+<!-- cart page content section start -->
+<section class="cart-page section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-responsive table-one margin-minus section-padding-bottom">
+                    <table class="spacing-table text-center">
+                        <thead>
+                            <tr>
+                                <th>Hình ảnh</th>
+                                <th>Tên</th>
+                                <th>Số lượng </th>
+                                <th>Tổng giá</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in db.Sanphams)
+                            {
+                                <tr>
+                                    <td class="td-img text-left">
+                                        <a href="/Product/Details/@item.masp"><img src="@db.dschitietsanpham.SingleOrDefault(x=> x.masp == item.masp).hinh240x190" alt="Add Product" /></a>
+                                        <div class="items-dsc">
+                                            <p style="line-height: inherit !important;"><a href="/Product/Details/@item.masp">@item.tensp</a></p>
+                                        </div>
+                                    </td>
+                                    <td>@item.gia @item.donvi</td>
+                                    <td>
+                                            <div class="plus-minus">
+                                                @item.slsp
+                                            </div>
+                                    </td>
+                                    <td>@(item.gia * item.slsp) @item.donvi</td>
+                                    <td><a href="/product/DeleteGioHang/@item.masp"><i class="fa fa-trash" title="Remove this product"></i></a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                
+            </div>
+            <div class="col-sm-4">
+              
+            </div>
+            <div class="col-sm-4">
+                <div class="estimate-text responsive">
+                    <div class="subtotal clearfix">
+                        <p>Subtotal: <span class="floatright">@db.Sanphams.Sum(x=> x.gia * x.slsp).ToString()</span></p>
+                        <p>Grandtotal: <span class="floatright">@db.Sanphams.Sum(x => x.gia * x.slsp).ToString()</span></p>
+                    </div>
+                    <div class="default-btn text-right">
+                        <a class="btn-style" href="/Product/PaymentWithPaypal">Mua hàng</a>
+                    </div>
+                    <p><strong>Checkout with multiples address</strong></p>
+                </div>
+            </div>
+        </div>
+        @if (db.SanphamDaMua.Count > 0)
+        {
+            <div style="margin-top:50px" class="row">
+                <div class="col-xs-12">
+                    <div class="table-responsive table-one margin-minus section-padding-bottom">
+                        <table class="spacing-table text-center">
+                            <thead>
+                                <tr>
+                                    <th>Hình ảnh</th>
+                                    <th>Tên</th>
+                                    <th>Số lượng </th>
+                                    <th>Tổng giá</th>
+                                    <th>Tình trạng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in db.SanphamDaMua)
+                                {
+                                    <tr>
+                                        <td class="td-img text-left">
+                                            <a href="#"><img src="@db.dschitietsanpham.SingleOrDefault(x=> x.masp == item.masp).hinh240x190" alt="Add Product" /></a>
+                                            <div class="items-dsc">
+                                                <p style="line-height: inherit !important;"><a href="#">@item.tensp</a></p>
+                                            </div>
+                                        </td>
+                                        <td>@item.gia @item.donvi</td>
+                                        <td>
+                                            <div class="plus-minus">
+                                                @item.slsp
+                                            </div>
+                                        </td>
+                                        <td>@(item.gia * item.slsp) @item.donvi</td>
+                                        <td><strong>Đã mua</strong></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<!-- cart page content section end -->

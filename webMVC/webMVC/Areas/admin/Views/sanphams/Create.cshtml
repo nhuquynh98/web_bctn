@@ -1,0 +1,69 @@
+﻿@model webMVC.Models.sanpham
+
+@{
+    ViewBag.Title = "Create";
+}
+
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>Thêm mới sản phẩm</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Tên sản phẩm</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tensp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.tensp, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Mã loại sản phẩm</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MaLSP, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MaLSP, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Giá</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.gia, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.gia, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Đơn vị (Ví dụ: VNĐ)</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.donvi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.donvi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Mô tả</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.mota, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.mota, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="input-Default" class="col-sm-2 control-label">Số lượng sản phẩm</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.slsp, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.slsp, "", new { @class = "text-danger" })
+                </div>
+            </div> 
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Tạo mới" class="btn btn-primary" />
+                    <a class="btn btn-flickr" href="/admin/sanphams">quay lại</a>
+                </div>
+            </div>
+        </div>
+    }

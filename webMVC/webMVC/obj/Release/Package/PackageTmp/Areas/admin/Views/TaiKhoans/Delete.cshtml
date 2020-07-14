@@ -1,0 +1,50 @@
+﻿@model webMVC.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div id="main-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-heading clearfix">
+                    <h4 class="panel-title">Thông tin tài khoản khách hàng</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Họ</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.Ho)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Tên</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.Ten)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ngày sinh</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.Ngaysinh)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Số điện thoại</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.Sdt)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.Email)</div>
+                    </div>
+                    
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                            <a class="btn btn-flickr" href="/admin/TaiKhoans">quay lại</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<!-- page banner area start -->
+<div class="page-banner">
+    <img src="~/assets/img/slider/bg3.png" alt="Page Banner" />
+</div>
+<!-- page banner area end -->
+<!-- cart page content section start -->
+<section class="login-page section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="single-check">
+                        <form action="/Login/Dangnhap" method="post"> 
+                            <div class="single-input p-bottom50 clearfix">
+                                <div class="col-xs-12">
+                                    <div class="check-title">
+                                        <h3>Đăng nhập</h3>
+                                        <p>Bạn có thể đăng nhập, nếu đã từng có tài khoản</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <label>Email:</label>
+                                    <div class="input-text">
+                                        <input id="emailDangnhap" type="text" name="Email" />
+                                        <p id="loiemaildangnhap" style="color: red ; text-align: end"></p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <label>Password:</label>
+                                    <div class="input-text">
+                                        <input id="matkhaudangnhap" type="password" name="Matkhau" />
+                                        <p id="loimatkhaudangnhap" style="color: red ; text-align: end"></p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="forget">
+                                        <a href="#">Quên mật khẩu?</a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="submit-text">
+                                        <input id="buttondangnhap" type="button" name="submit" value="Đăng nhập">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="single-input p-bottom50 clearfix">
+                    <form action="/Login/Dangky" method="post">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="check-title">
+                                    <h3>Tạo tài khoản mới</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Tên:</label>
+                                <div class="input-text">
+                                    <input id="tendangky" type="text" name="Ten" />
+                                    <p id="loitendangky" style="color: red ; text-align: end"></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Họ:</label>
+                                <div class="input-text">
+                                    <input id="hodangky" type="text" name="Ho" />
+                                    <p id="loihodangky" style="color: red ; text-align: end"></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <label>Ngày sinh:</label>
+                                <div class="input-text">
+                                    <input id="ngaysinhdangky" type="datetime" name="Ngaysinh" />
+                                    <p id="loingaysinhdangky" style="color: red ; text-align: end"></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <label>Số điện thoại:</label>
+                                <div class="input-text">
+                                    <input id="sdtdangky" type="text" name="Sdt" />
+                                    <p id="loisdtdangky" style="color: red ; text-align: end"></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Email:</label>
+                                <div class="input-text">
+                                    <input id="emaildangky"type="text" name="Email" />
+                                    <p id="loiemaildangky" style="color: red ; text-align: end"></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Mật khẩu:</label>
+                                <div class="input-text">
+                                    <input id="matkhaudangky"type="password" name="Matkhau" />
+                                    <p id="loimatkhaudangky" style="color: red ; text-align: end"></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                @*<div class="billing-checkbox">
+                                    <input type="checkbox" name="billing-address" value="1" class="checkbox">
+                                    <label>Sign up for our newsletter! </label>
+                                </div>*@
+                                <div class="submit-text">
+                                    <input id ="buttondangky" type="button" name="submit" value="Đăng ký">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- cart page content section end -->
+
+
+<script src="~/assets/validation/login.js"></script>

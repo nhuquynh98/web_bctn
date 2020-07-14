@@ -1,0 +1,97 @@
+﻿@model webMVC.Models.sanpham
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+
+
+<div id="main-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                @*<div class="panel-heading clearfix">
+                        <h4 class="panel-title">Thông tin chi tiết loại sản phẩm</h4>
+                    </div>*@
+                <div class="panel-body">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <h4>Sản phẩm</h4>
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.masp)
+                                    @Html.HiddenFor(model => model.masp, new { htmlAttributes = new { @class = "form-control" } })
+                            <div class="form-group">
+                                <label for="input-Default" class="col-sm-2 control-label">Tên sản phẩm</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.tensp, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.tensp, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-Default" class="col-sm-2 control-label">Mã loại sản phẩm</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.MaLSP, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MaLSP, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-Default" class="col-sm-2 control-label">giá</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.gia, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.gia, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-Default" class="col-sm-2 control-label">đơn vị</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.donvi, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.donvi, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-Default" class="col-sm-2 control-label">Mô tả</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.mota, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.mota, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-Default" class="col-sm-2 control-label">số lượng hiện có</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.slsp, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.slsp, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input-Default" class="col-sm-2 control-label">Trạng thái</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.trangthai, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.trangthai, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Lưu" class="btn btn-primary" />
+                                    <a class="btn btn-flickr" href="/admin/sanphams">quay lại</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

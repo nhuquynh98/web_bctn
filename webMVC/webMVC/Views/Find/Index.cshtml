@@ -1,0 +1,61 @@
+﻿@model webMVC.Models.DAO
+
+@{
+    ViewBag.Title = "Index";
+    var db = Model as webMVC.Models.DAO;
+
+}
+
+<!-- page banner area start -->
+<div class="page-banner">
+    <img src="~/assets/img/slider/bg3.png" alt="Page Banner" />
+</div>
+<!-- page banner area end -->
+
+<!-- Find section start -->
+<section class="riding-area riding-one section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                <div class="section-title text-center">
+                    <h3> Tìm kiếm sản phẩm </h3>
+                    <div class="shape">
+                        <img src="~/assets/img/icon/t-shape.png" alt="Title Shape" />
+                    </div>
+                    <p>Danh sách sản phẩm tìm kiếm</p>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+                @foreach (var item in db.Sanphams)
+                {
+                    <div class="riding-item col-xs-12">
+                        <div class="product-item">
+                            <div class="pro-img">
+                                <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=>x.masp == item.masp).hinh270x290" alt="Product" /></a>
+                                <div class="link-icon">
+                                    <a href="@Url.Action("Details","Product",new { id = item.masp })"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="riding-title clearfix">
+                                <div class="product-title text-left floatleft">
+                                    <a href="@Url.Action("Details","Product",new { id = item.masp })"><h5>@item.tensp</h5></a>
+                                    <p><span>@item.gia</span> @item.donvi</p>
+                                </div>
+                                <div class="actions-btn floatright">
+                                    <ul class="clearfix">
+                                        <li>
+                                            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+        </div>
+    </div>
+</section>
+<!-- Find section end -->
+
+    

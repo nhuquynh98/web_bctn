@@ -1,0 +1,54 @@
+﻿@model webMVC.Areas.admin.Models.DAOADMIN
+
+@{
+    ViewBag.Title = "Index";
+    var soluong = 0;
+    var db = Model as webMVC.Areas.admin.Models.DAOADMIN;
+}
+
+<div class="page-title">
+    <h3 class="breadcrumb-header">Sản phẩm đã thanh toán</h3>
+</div>
+
+<div id="main-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Họ</th>
+                                <th>Tên</th>
+                                <th>Số điện thoại</th>
+                                <th>Email</th>
+                                <th>Sản phẩm</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (db.listGioHang != null)
+                            {
+                                foreach (var item in db.listGioHang)
+                                {
+                                    <tr>
+                                        <th scope="row">@(++soluong)</th>
+                                        <td>@item.Ho</td>
+                                        <td>@item.Ten</td>
+                                        <td>@item.Sdt</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.sanpham</td>
+                                        <td>
+                                            <a class="btn btn-info" href="/admin/thanhtoan/Details/@item.makh">Chi tiết</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Main Wrapper -->

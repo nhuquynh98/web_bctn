@@ -1,0 +1,56 @@
+﻿@model webMVC.Models.bonho
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="main-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-heading clearfix">
+                    <h4 class="panel-title">Thông tin chi tiết bộ nhớ</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Mã sản phẩm</label>
+                            <div class="form-control">@Html.DisplayFor(model => model.maSp)</div>
+                        </div>
+                        <label for="exampleInputPassword1">Tên sản phẩm</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.tensp)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Ram</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.ram)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Bộ nhớ trong</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.bonhotrong)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Bộ nhớ khả dụng</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.bonhokhadung)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Thẻ nhớ ngoài</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.thenhongoai)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Hỗ trợ thẻ tối đa</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.hotrothetoida)</div>
+                    </div>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                            <a class="btn btn-flickr" href="/admin/bonhoes">quay lại</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

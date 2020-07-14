@@ -1,0 +1,376 @@
+﻿@model webMVC.Models.DAO
+
+@{
+    ViewBag.Title = "Index";
+    var db = Model as webMVC.Models.DAO;
+}
+
+
+    <!-- page banner area start -->
+    <div class="page-banner">
+        <img src="~/assets/img/slider/bg3.png" alt="Page Banner" />
+    </div>
+    <!-- page banner area end -->
+    <!-- product content section start -->
+    <section class="product-content section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="shop-menu clearfix">
+                        <div class="left floatleft">
+                            <div class="tab-menu view-mode">
+                                <a class="grid active" data-toggle="tab" href="#grid"><i class="fa fa-th"></i></a>
+                                <a class="list" data-toggle="tab" href="#list"><i class="fa fa-bars"></i></a>
+                            </div>
+                        </div>
+                        <div class="right floatright">
+                            <ul>
+                                <li>
+                                    <div class="custom-select">
+                                        <select class="form-control">
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                        </select>
+                                    </div>
+                                    <p>Showing</p>
+                                </li>
+                                <li>
+                                    <div class="custom-select">
+                                        <select class="form-control">
+                                            <option>Điện thoại</option>
+                                            <option>Loa</option>
+                                            <option>Pin</option>
+                                            <option>Tai nghe</option>
+                                        </select>
+                                    </div>
+                                    <p>Short By</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active text-center" id="grid">
+                        <div class="single-products">
+                            @foreach (var item in db.Sanphams)
+                            {
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="product-item margin40">
+                                        <div class="pro-img">
+                                            <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=> x.masp == item.masp).hinh370x420" alt="Product" /></a>
+                                            <div class="actions-btn">
+                                                <ul class="clearfix">
+                                                    <li>
+                                                        <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-toggle="modal" data-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-title">
+                                            <a href="@Url.Action("Details","Product",new { id = item.masp })"><h5>@item.tensp</h5></a>
+                                            <div class="ratting">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star gray-star"></i>
+                                            </div>
+                                            <p><span>@item.gia @item.donvi</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="list-view tab-pane fade in" id="list">
+                        <div class="col-xs-12 col-sm-8 col-md-9">
+                            @foreach (var item in db.Sanphams)
+                            {
+
+                                <div class="single-product margin40 clearfix">
+                                    <div class="left">
+                                        <div class="product-item margin-top">
+                                            <div class="pro-img">
+                                                <a href="@Url.Action("Details","Product",new { id = item.masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=> x.masp == item.masp).hinh270x357" alt="Product" /></a>
+                                                <div class="link-icon zoom-gallery">
+                                                    <a href="@db.dschitietsanpham.SingleOrDefault(x=> x.masp == item.masp).hinh270x357"><img src="~/assets/img/icon/w-zoom.png" alt="Product" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="product-item">
+                                            <div class="product-title">
+                                                <a href="@Url.Action("Details","Product",new { id = item.masp })"><h4>@item.tensp</h4></a>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star gray-star"></i>
+                                                </div>
+                                                <p><span>@item.gia @item.donvi</span></p>
+                                                <hr />
+                                                <p class="list-p">@item.tensp</p>
+                                                <hr />
+                                            </div>
+                                            <div class="actions-btn">
+                                                <ul class="clearfix text-center">
+                                                    <li>
+                                                        <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="cart.html"><i class="fa fa-heart-o"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-compress"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-3">
+                            <div class="sidebar left-sidebar">
+                                <div class="category single-side">
+                                    <div class="sidebar-title">
+                                        <h3>Shop categories</h3>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Điện thoại</a> <span class="floatright">(0)</span>
+                                        </li>
+                                        <li>
+                                            <a href="#">Loa</a> <span class="floatright">(0)</span>
+                                        </li>
+                                        <li>
+                                            <a href="#">Pin</a> <span class="floatright">(0)</span>
+                                        </li>
+                                        <li>
+                                            <a href="#">Tai nghe</a> <span class="floatright">(0)</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                @*<div class="p-filter single-side">
+                                    <div class="sidebar-title">
+                                        <h3>price FILTER</h3>
+                                    </div>
+                                    <p>Range:  $100.00 - 500.00 </p>
+                                    <div id="range-slider"></div>
+                                </div>
+                                <div class="single-side">
+                                    <div class="sidebar-title">
+                                        <h3>Sizes</h3>
+                                    </div>
+                                    <div class="size-btn clearfix">
+                                        <a href="#">X</a>
+                                        <a href="#">m</a>
+                                        <a href="#">l</a>
+                                        <a href="#">Xm</a>
+                                        <a href="#">xxl</a>
+                                    </div>
+                                </div>*@
+                                <div class="single-side clearfix">
+                                    <div class="sidebar-title">
+                                        <h3>Sản phẩm hiện tại</h3>
+                                    </div>
+                                    @for (int i = 0; i < 4; i++)
+                                    {
+
+                                        <div class="recent-item">
+                                            <div class="img">
+                                                <a href="@Url.Action("Details","Product",new { id = @db.Sanphams[i].masp })"><img src="@db.dschitietsanpham.SingleOrDefault(x=> x.masp == db.Sanphams[i].masp).hinh87x113" alt="Resent Item" /></a>
+                                            </div>
+                                            <div class="text">
+                                                <a href="@Url.Action("Details","Product",new { id = @db.Sanphams[i].masp })"><h5>@db.Sanphams[i].tensp</h5></a>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star gray-star"></i>
+                                                </div>
+                                                <p><span>@db.Sanphams[i].gia @db.Sanphams[i].donvi</span></p>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                                @*<div class="single-side">
+                                    <div class="sidebar-title">
+                                        <h3>Popular Tags</h3>
+                                    </div>
+                                    <div class="tag-btn clearfix">
+                                        <a href="#">Bike</a>
+                                        <a href="#">Wheel</a>
+                                        <a href="#">Aparel</a>
+                                        <a href="#">GPS</a>
+                                        <a href="#">Track</a>
+                                        <a href="#">Accessories</a>
+                                        <a href="#">Men</a>
+                                        <a href="#">Women</a>
+                                        <a href="#">Power</a>
+                                    </div>
+                                </div>
+                                <div class="sidebar-banner banner-hover">
+                                    <a href="#"><img src="~/assets/img/banner.jpg" alt="Banner" /></a>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="shop-menu clearfix margin-close">
+                        <div class="left floatleft">
+                            <div class="tab-menu view-mode">
+                                <a class="grid active" data-toggle="tab" href="#grid"><i class="fa fa-th"></i></a>
+                                <a class="list" data-toggle="tab" href="#list"><i class="fa fa-bars"></i></a>
+                            </div>
+                        </div>
+                        <div class="right floatright text-center">
+                            <div class="pagnation-ul">
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li class="dot-dot">
+                                        <a href="#">.....</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product content section end -->
+    <!-- quick view start -->
+    <div class="product-details quick-view modal animated zoomIn" id="quick-view">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="d-table">
+                        <div class="d-tablecell">
+                            <div class="modal-dialog">
+                                <div class="main-view modal-content">
+                                    <div class="modal-footer" data-dismiss="modal">
+                                        <span>x</span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="left">
+                                                <!-- Single-pro-slider Big-photo start -->
+                                                <div class="quick-img">
+                                                    <img src="~/assets/img/products/l1.jpg" alt="" />
+                                                </div>
+                                                <!-- Single-pro-slider Big-photo end -->
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="right">
+                                                <div class="singl-pro-title">
+                                                    <h3>GT Sensor Carbon Jenson </h3>
+                                                    <h1>$1700.00</h1>
+                                                    <hr />
+                                                    <p>doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+                                                    <hr />
+                                                    <div class="color-brand clearfix">
+                                                        <div class="s-select">
+                                                            <div class="custom-select">
+                                                                <select class="form-control">
+                                                                    <option>Color</option>
+                                                                    <option>Red </option>
+                                                                    <option>Green </option>
+                                                                    <option>Blue</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="s-select">
+                                                            <div class="custom-select">
+                                                                <select class="form-control">
+                                                                    <option>Brend</option>
+                                                                    <option>Men </option>
+                                                                    <option>Fashion </option>
+                                                                    <option>Shirt</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="s-select s-plus-minus">
+                                                            <form action="#" method="POST">
+                                                                <div class="plus-minus">
+                                                                    <a class="dec qtybutton">-</a>
+                                                                    <input type="text" value="02" name="qtybutton" class="plus-minus-box">
+                                                                    <a class="inc qtybutton">+</a>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="actions-btn">
+                                                        <ul class="clearfix text-center">
+                                                            <li>
+                                                                <a href="cart.html"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="cart.html"><i class="fa fa-heart-o"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-compress"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><i class="fa fa-share-alt"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <hr />
+                                                    <div class="categ-tag">
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                CATEGORIES:
+                                                                <a href="#">Bike,</a> <a href="#">Cycle,</a> <a href="#">Ride,</a> <a href="#">Mountain</a>
+                                                            </li>
+                                                            <li>
+                                                                TAG:
+                                                                <a href="#">Ride,</a> <a href="#">Helmet,</a> <a href="#">cycle,</a> <a href="#">bike</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- quick view end -->
+   
+

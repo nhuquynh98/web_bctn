@@ -1,0 +1,48 @@
+﻿@model webMVC.Models.hedieuhanh
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="main-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-heading clearfix">
+                    <h4 class="panel-title">Thông tin chi tiết thông số hệ điều hành</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Tên sản phẩm</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.tensp)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Hệ điều hành</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.hedieuhanh1)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Chipset</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.chipset)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Tốc độ CPU</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.tocdoCPU)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Chip đồ họa</label>
+                        <div class="form-control">@Html.DisplayFor(model => model.chipdohoa)</div>
+                    </div>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                            <a class="btn btn-flickr" href="/admin/hedieuhanhs">quay lại</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

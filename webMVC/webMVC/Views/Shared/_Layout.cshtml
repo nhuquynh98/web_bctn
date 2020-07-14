@@ -1,0 +1,411 @@
+﻿@model webMVC.Models.DAO
+
+@{ 
+    var db = Model as webMVC.Models.DAO;
+    var ttsdt = "";
+    var ttmail = "";
+    var ttlogo = "";
+    var ttlogo2 = "";
+    foreach (var item in db.Thongtins)
+    {
+        switch (item.id)
+        {
+            case "ttsdt":
+                ttsdt = item.giatri;
+                break;
+            case "ttmail":
+                ttmail = item.giatri;
+                break;
+            case "ttlogo":
+                ttlogo = item.giatri;
+                break;
+            case "ttlogo2":
+                ttlogo2 = item.giatri;
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>BCTN</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="~/assets/image/x-icon" href="~/assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="~/assets/image/apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- style css -->
+    <link rel="stylesheet" href="~/assets/style.css">
+    <!-- modernizr js -->
+    <script src="~/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- header section start -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="left floatleft">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    @ttsdt
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    @ttmail
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right floatright">
+                            <ul>
+                                <li>
+                                    <form action="/Find/Index">
+                                        <button type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <input autocomplete="off" id="search" name="query" type="text" placeholder="Search" />
+                                        <div style="z-index: 1000; position: relative; background-color: #ffffff;" id="listHint">
+                                        </div>
+                                    </form>
+                                </li>
+                                @if (Session["Ten"] == null)
+                                {
+                                    <li>
+                                        <i class="fa fa-user"></i>
+                                        <a href="/Login/Index">Đăng nhập</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <i class="fa fa-user"></i>
+                                        <a href="#">@Session["Ten"]</a>
+                                    </li>
+                                    <li style="margin-left: 8px">
+                                        <a href="/Login/Dangxuat">Đăng xuất</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-menu" class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 header-bottom-bg">
+                        <div class="logo floatleft">
+                            <a href="/Home/index">
+                                <img src="@ttlogo" alt="Rideo" />
+                            </a>
+                        </div>
+                        <div class="mainmenu text-center floatleft">
+                            <nav>
+                                <ul>
+                                    <li><a href="/Home/index">Trang chủ</a></li>
+                                    <li>
+                                        <a href="/Product/index">Sản phẩm</a>
+                                    </li>
+                                    <li><a href="/contact">Tin tức</a></li>
+                                    <li>
+                                        <a href="/contact">Giới thiệu</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/contact">Sản phẩm</a>
+                                            </li>
+                                            <li>
+                                                <a href="/contact">Công ty</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    @*<li>
+                                        <a href="#">Pages</a>
+                                        <ul>
+                                            <li>
+                                                <a href="login.html">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="my-account.html">My account</a>
+                                            </li>
+                                            <li>
+                                                <a href="checkout.html">CheckOut</a>
+                                            </li>
+                                            <li>
+                                                <a href="wishlist.html">Wishlist</a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">Cart</a>
+                                            </li>
+                                            <li>
+                                                <a href="about.html">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="contact.html">Contact</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop.html">Shop</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-details.html">Product Details</a>
+                                            </li>
+                                            <li>
+                                                <a href="error-404.html">404 Error</a>
+                                            </li>
+                                        </ul>
+                                    </li>*@
+                                    <li>
+                                        <a href="/contact">Liên hệ</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- mobile menu start -->
+                        <div class="mobile-menu-area">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li>
+                                            <a href="shop.html">products</a>
+                                        </li>
+                                        <li><a href="about.html">about</a></li>
+                                        <li>
+                                            <a href="blog-1.html">blog</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="blog-1.html">Blog Style One</a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-blog.html">Single Blog</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Pages</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="login.html">Login</a>
+                                                </li>
+                                                <li>
+                                                    <a href="my-account.html">My account</a>
+                                                </li>
+                                                <li>
+                                                    <a href="checkout.html">CheckOut</a>
+                                                </li>
+                                                <li>
+                                                    <a href="wishlist.html">Wishlist</a>
+                                                </li>
+                                                <li>
+                                                    <a href="cart.html">Cart</a>
+                                                </li>
+                                                <li>
+                                                    <a href="about.html">About</a>
+                                                </li>
+                                                <li>
+                                                    <a href="contact.html">Contact</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop.html">Shop</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-gird-left.html">Shop Left Gird View</a>
+                                                </li>
+                                                <li>
+                                                    <a href="product-details.html">Product Details</a>
+                                                </li>
+                                                <li>
+                                                    <a href="error-404.html">404 Error</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">contact</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- mobile menu end -->
+                        @if (db.thongtingiohang.Count > 0)
+                        {
+                            <div class="cart-menu-area floatright">
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="pe-7s-shopbag"></i><span>@db.thongtingiohang.Count</span></a>
+                                        <ul class="cart-menu">
+                                            @foreach (var item in db.thongtingiohang)
+                                            {
+                                                <li>
+                                                    <a href="cart.html"><img src="~/assets/img/cart.png" alt="" /></a>
+                                                    <div class="cart-menu-title">
+                                                        <a href="/Product/Details/@item.masp"><h5>@item.tensp </h5></a>
+                                                        <span>@item.slsp x @item.gia @item.donvi</span>
+                                                    </div>
+                                                </li>
+                                            }
+                                            <li class="cart-menu-btn">
+                                                <a href="/product/giohang">Xem giỏ hàng</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                        else if (Session["Ten"] != null)
+                        {
+                            <div class="cart-menu-area floatright">
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="pe-7s-shopbag"></i><span>0</span></a>
+                                        <ul class="cart-menu">
+                                            <li class="cart-menu-btn">
+                                                <a href="/product/giohang">Xem giỏ hàng</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header section end -->
+
+    @RenderBody()
+
+
+    <!-- footer section start -->
+    <footer>
+        <div class="footer-logo-text">
+            <div class="container text-center">
+                <a href="index.html"><img src="@ttlogo2" alt="Logo" /></a>
+                <p>Samsung</p>
+                <p>luôn đồng hành cùng bạn.</p>
+            </div>
+        </div>
+        <!-- footer top start -->
+        <div class="footer-top section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-3">
+                        <div class="s-footer-text">
+                            <div class="footer-title">
+                                <h4>Liên hệ</h4>
+                            </div>
+                            <div class="contact-link">
+                                <ul>
+                                    <li>
+                                        <span>Email:</span><p>@ttmail</p>
+                                    </li>
+                                    <li>
+                                        <span>Phone:</span> <p>@ttsdt</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 col-md-2">
+                        <div class="s-footer-text">
+                            <div class="footer-title">
+                                <h4>INFORMATION</h4>
+                            </div>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li>
+                                        <a href="about.html">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Our Store</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Order history</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Help</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">FAQ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 col-md-3">
+                        <div class="s-footer-text">
+                            <div class="footer-title">
+                                <h4>My Account</h4>
+                            </div>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li>
+                                        <a href="#">My Orer</a>
+                                    </li>
+                                    <li>
+                                        <a href="cart.html">My Cart</a>
+                                    </li>
+                                    <li>
+                                        <a href="wishlist.html">Wishlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="login.html">Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="login">Register</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer top end -->
+    </footer>
+    <!-- footer section end -->
+    <!-- all js here -->
+    <!-- jquery latest version -->
+    <script src="~/assets/js/vendor/jquery-1.12.3.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <!-- camera slider JS -->
+    <script src="~/assets/js/camera.min.js"></script>
+
+    <!-- jquery.easing js -->
+    <script src="~/assets/js/jquery.easing.1.3.js"></script>
+    <!-- slick slider js -->
+    <script src="~/assets/js/slick.min.js"></script>
+    <!-- jquery-ui js -->
+    <script src="~/assets/js/jquery-ui.min.js"></script>
+    <!-- magnific-popup js -->
+    <script src="~/assets/js/magnific-popup.min.js"></script>
+    <!-- countdown js -->
+    <script src="~/assets/js/countdown.js"></script>
+    <!-- meanmenu js -->
+    <script src="~/assets/js/jquery.meanmenu.js"></script>
+    <!-- plugins js -->
+    <script src="~/assets/js/plugins.js"></script>
+    <!-- Google Map JS -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_Agsvf36du-7l_mp8iu1a-rXoKcWfs2I"> </script>
+    <!-- Custom map-script js -->
+    @*<script src="~/assets/js/map-script.js"></script>*@
+    <!-- main js -->
+    <script src="~/assets/js/main.js"></script>
+    <script src="~/assets/validation/SearchHint.js"></script>
+    <script src="~/assets/validation/giohang.js"></script>
+</body>
+</html>

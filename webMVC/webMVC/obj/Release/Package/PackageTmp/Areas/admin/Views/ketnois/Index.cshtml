@@ -1,0 +1,54 @@
+﻿@model IEnumerable<webMVC.Models.ketnoi>
+
+@{
+    ViewBag.Title = "Index";
+    var soluong = 0;
+}
+
+<div class="page-title">
+    <h3 class="breadcrumb-header">Thông tin hỗ trợ kết nối</h3>
+</div>
+
+<div id="main-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-heading clearfix">
+                    <a class="btn btn-primary" style="margin-bottom: 10px" href="/admin/ketnois/Create">Thêm mới thông tin hỗ trợ kết nối</a>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Hỗ trợ mạng</th>
+                                <th>Sim</th>
+                                <th>Wifi</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@(++soluong)</th>
+                                    <td>@Html.DisplayFor(modelItem => item.tensp)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.mangdidong)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.sim)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.wifi)</td>
+                                    <td>
+                                        <a class="btn btn-success" href="/admin/ketnois/Edit/@item.id">Sửa</a>
+                                        <a class="btn btn-info" href="/admin/ketnois/Details/@item.id">Chi tiết</a>
+                                        <a class="btn btn-danger" href="/admin/ketnois/Delete/@item.id">Xóa</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Main Wrapper -->
+

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BCTNModelStoreContainer" CdmEntityContainer="BCTNEntities1">
+    <EntitySetMapping Name="sanphams">
+      <EntityTypeMapping TypeName="BCTNModel.sanpham">
+        <MappingFragment StoreEntitySet="sanpham">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="loaisp" ColumnName="loaisp" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="donvi" ColumnName="donvi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thongtins">
+      <EntityTypeMapping TypeName="BCTNModel.thongtin">
+        <MappingFragment StoreEntitySet="thongtin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="giatri" ColumnName="giatri" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BCTNModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="binhluan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="makhachhang" Type="int" />
+    <Property Name="masp" Type="int" />
+    <Property Name="noidung" Type="nvarchar" MaxLength="500" />
+    <Property Name="ngayyeuthich" Type="datetime" />
+    <Property Name="trangthai" Type="int" />
+  </EntityType>
+  <EntityType Name="bonho">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maSp" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="200" />
+    <Property Name="ram" Type="nvarchar" MaxLength="200" />
+    <Property Name="bonhotrong" Type="nvarchar" MaxLength="200" />
+    <Property Name="bonhokhadung" Type="nvarchar" MaxLength="200" />
+    <Property Name="thenhongoai" Type="nvarchar" MaxLength="200" />
+    <Property Name="hotrothetoida" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="cameraSau">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maSp" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="200" />
+    <Property Name="dophangiai" Type="nvarchar" MaxLength="200" />
+    <Property Name="quayphim" Type="nvarchar" MaxLength="200" />
+    <Property Name="denflash" Type="nvarchar" MaxLength="200" />
+    <Property Name="chupanhnangcao" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="cameraTruoc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maSp" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="200" />
+    <Property Name="dophangiai" Type="nvarchar" MaxLength="200" />
+    <Property Name="videocall" Type="nvarchar" MaxLength="200" />
+    <Property Name="thongtinkhac" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ChitietDonhang">
+    <Key>
+      <PropertyRef Name="masp" />
+      <PropertyRef Name="madh" />
+    </Key>
+    <Property Name="masp" Type="int" Nullable="false" />
+    <Property Name="madh" Type="int" Nullable="false" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="dongia" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="chitietsanpham">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="masp" Type="int" />
+    <Property Name="mausp" Type="nvarchar" MaxLength="100" />
+    <Property Name="mota" Type="nvarchar" MaxLength="800" />
+    <Property Name="hinh87x113" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh270x281" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh270x290" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh270x307" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh270x357" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh277x290" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh315x255" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh320x240" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh320x320" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh355x212" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh370x285" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh370x420" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh370x600" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh378x238" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh400x300" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh435x265" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh445x265" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh565x480" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh565x566" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh570x437" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh570x603" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh582x343" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh592x378" Type="nvarchar" MaxLength="400" />
+    <Property Name="hinh240x190" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="donhang">
+    <Key>
+      <PropertyRef Name="madh" />
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="madh" Type="int" Nullable="false" />
+    <Property Name="makh" Type="int" Nullable="false" />
+    <Property Name="thanhtoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="tinhtranggiaohang" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngaydat" Type="date" />
+    <Property Name="ngaygiao" Type="date" />
+  </EntityType>
+  <EntityType Name="giohang">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="makhachhang" Type="int" />
+    <Property Name="masp" Type="int" />
+    <Property Name="gia" Type="int" />
+    <Property Name="soluongdamua" Type="int" />
+    <Property Name="ngaymua" Type="datetime" />
+  </EntityType>
+  <EntityType Name="hedieuhanh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maSp" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="200" />
+    <Property Name="hedieuhanh" Type="nvarchar" MaxLength="200" />
+    <Property Name="chipset" Type="nvarchar" MaxLength="200" />
+    <Property Name="tocdoCPU" Type="nvarchar" MaxLength="200" />
+    <Property Name="chipdohoa" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ketnoi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maSp" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="200" />
+    <Property Name="mangdidong" Type="nvarchar" MaxLength="200" />
+    <Property Name="sim" Type="nvarchar" MaxLength="200" />
+    <Property Name="wifi" Type="nvarchar" MaxLength="200" />
+    <Property Name="GPS" Type="nvarchar" MaxLength="200" />
+    <Property Name="Bluetooth" Type="nvarchar" MaxLength="200" />
+    <Property Name="boSac" Type="nvarchar" MaxLength="200" />
+    <Property Name="jackTaiNghe" Type="nvarchar" MaxLength="200" />
+    <Property Name="ketNoiKhac" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="LoaiSanPham">
+    <Key>
+      <PropertyRef Name="MaLSP" />
+    </Key>
+    <Property Name="MaLSP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenLSP" Type="nvarchar" MaxLength="400" />
+    <Property Name="mota" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="manhinh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maSp" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="200" />
+    <Property Name="congnghemanhinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="dophangiai" Type="nvarchar" MaxLength="200" />
+    <Property Name="manhinhrong" Type="nvarchar" MaxLength="200" />
+    <Property Name="matkinhcamung" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="muahang">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="makhachhang" Type="int" />
+    <Property Name="masp" Type="int" />
+    <Property Name="gia" Type="int" />
+    <Property Name="soluongdamua" Type="int" />
+    <Property Name="ngaymua" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sanpham">
+    <Key>
+      <PropertyRef Name="masp" />
+    </Key>
+    <Property Name="masp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="200" />
+    <Property Name="MaLSP" Type="varchar" MaxLength="50" />
+    <Property Name="gia" Type="int" />
+    <Property Name="donvi" Type="varchar" MaxLength="10" />
+    <Property Name="mota" Type="nvarchar" MaxLength="500" />
+    <Property Name="slsp" Type="int" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="makh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDangnhap" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ho" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ngaysinh" Type="date" />
+    <Property Name="Sdt" Type="nvarchar" MaxLength="12" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Matkhau" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phanquyen" Type="int" />
+  </EntityType>
+  <EntityType Name="thietketrongluong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maSp" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="200" />
+    <Property Name="thietke" Type="nvarchar" MaxLength="200" />
+    <Property Name="chatlieu" Type="nvarchar" MaxLength="200" />
+    <Property Name="kichthuoc" Type="nvarchar" MaxLength="200" />
+    <Property Name="trongluong" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="thongtin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="giatri" Type="nvarchar" MaxLength="400" />
+    <Property Name="mota" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="thongtinsac">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maSp" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="200" />
+    <Property Name="dungluongpin" Type="nvarchar" MaxLength="200" />
+    <Property Name="loaipin" Type="nvarchar" MaxLength="200" />
+    <Property Name="congnghePin" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Tienich">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maSp" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="200" />
+    <Property Name="baomatnangcao" Type="nvarchar" MaxLength="200" />
+    <Property Name="tinhnangdacbiet" Type="nvarchar" MaxLength="800" />
+    <Property Name="ghiam" Type="nvarchar" MaxLength="100" />
+    <Property Name="radio" Type="nvarchar" MaxLength="100" />
+    <Property Name="xemphim" Type="nvarchar" MaxLength="200" />
+    <Property Name="nghenhac" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="yeuthich">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="makhachhang" Type="int" />
+    <Property Name="masp" Type="int" />
+    <Property Name="ngayyeuthich" Type="datetime" />
+    <Property Name="trangthai" Type="int" />
+  </EntityType>
+  <EntityContainer Name="BCTNModel1StoreContainer">
+    <EntitySet Name="binhluan" EntityType="Self.binhluan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bonho" EntityType="Self.bonho" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cameraSau" EntityType="Self.cameraSau" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cameraTruoc" EntityType="Self.cameraTruoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChitietDonhang" EntityType="Self.ChitietDonhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chitietsanpham" EntityType="Self.chitietsanpham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="donhang" EntityType="Self.donhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="giohang" EntityType="Self.giohang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hedieuhanh" EntityType="Self.hedieuhanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ketnoi" EntityType="Self.ketnoi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiSanPham" EntityType="Self.LoaiSanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="manhinh" EntityType="Self.manhinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="muahang" EntityType="Self.muahang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sanpham" EntityType="Self.sanpham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="thietketrongluong" EntityType="Self.thietketrongluong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="thongtin" EntityType="Self.thongtin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="thongtinsac" EntityType="Self.thongtinsac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tienich" EntityType="Self.Tienich" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yeuthich" EntityType="Self.yeuthich" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BCTNModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="binhluan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="makhachhang" Type="Int32" />
+    <Property Name="masp" Type="Int32" />
+    <Property Name="noidung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ngayyeuthich" Type="DateTime" Precision="3" />
+    <Property Name="trangthai" Type="Int32" />
+  </EntityType>
+  <EntityType Name="bonho">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maSp" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ram" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="bonhotrong" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="bonhokhadung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="thenhongoai" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="hotrothetoida" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="cameraSau">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maSp" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="dophangiai" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="quayphim" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="denflash" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="chupanhnangcao" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="cameraTruoc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maSp" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="dophangiai" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="videocall" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="thongtinkhac" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ChitietDonhang">
+    <Key>
+      <PropertyRef Name="masp" />
+      <PropertyRef Name="madh" />
+    </Key>
+    <Property Name="masp" Type="Int32" Nullable="false" />
+    <Property Name="madh" Type="Int32" Nullable="false" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="dongia" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="chitietsanpham">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="masp" Type="Int32" />
+    <Property Name="mausp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="mota" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="hinh87x113" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh270x281" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh270x290" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh270x307" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh270x357" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh277x290" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh315x255" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh320x240" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh320x320" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh355x212" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh370x285" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh370x420" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh370x600" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh378x238" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh400x300" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh435x265" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh445x265" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh565x480" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh565x566" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh570x437" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh570x603" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh582x343" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh592x378" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="hinh240x190" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="donhang">
+    <Key>
+      <PropertyRef Name="madh" />
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="madh" Type="Int32" Nullable="false" />
+    <Property Name="makh" Type="Int32" Nullable="false" />
+    <Property Name="thanhtoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tinhtranggiaohang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngaydat" Type="DateTime" Precision="0" />
+    <Property Name="ngaygiao" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="giohang">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="makhachhang" Type="Int32" />
+    <Property Name="masp" Type="Int32" />
+    <Property Name="gia" Type="Int32" />
+    <Property Name="soluongdamua" Type="Int32" />
+    <Property Name="ngaymua" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="hedieuhanh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maSp" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="hedieuhanh1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="chipset" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="tocdoCPU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="chipdohoa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ketnoi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maSp" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="mangdidong" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="sim" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="wifi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="GPS" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Bluetooth" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="boSac" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="jackTaiNghe" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ketNoiKhac" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LoaiSanPham">
+    <Key>
+      <PropertyRef Name="MaLSP" />
+    </Key>
+    <Property Name="MaLSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenLSP" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="mota" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="manhinh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maSp" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="congnghemanhinh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="dophangiai" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="manhinhrong" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="matkinhcamung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="muahang">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="makhachhang" Type="Int32" />
+    <Property Name="masp" Type="Int32" />
+    <Property Name="gia" Type="Int32" />
+    <Property Name="soluongdamua" Type="Int32" />
+    <Property Name="ngaymua" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sanpham">
+    <Key>
+      <PropertyRef Name="masp" />
+    </Key>
+    <Property Name="masp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tensp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MaLSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gia" Type="Int32" />
+    <Property Name="donvi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="mota" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="slsp" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="makh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDangnhap" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Ho" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysinh" Type="DateTime" Precision="0" />
+    <Property Name="Sdt" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Matkhau" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phanquyen" Type="Int32" />
+  </EntityType>
+  <EntityType Name="thietketrongluong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maSp" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="thietke" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="chatlieu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="kichthuoc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="trongluong" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="thongtin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="giatri" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="mota" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="thongtinsac">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maSp" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="dungluongpin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="loaipin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="congnghePin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tienich">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maSp" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="baomatnangcao" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="tinhnangdacbiet" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="ghiam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="radio" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="xemphim" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="nghenhac" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="yeuthich">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="makhachhang" Type="Int32" />
+    <Property Name="masp" Type="Int32" />
+    <Property Name="ngayyeuthich" Type="DateTime" Precision="3" />
+    <Property Name="trangthai" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="BCTNEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="binhluans" EntityType="Self.binhluan" />
+    <EntitySet Name="bonhoes" EntityType="Self.bonho" />
+    <EntitySet Name="cameraSaus" EntityType="Self.cameraSau" />
+    <EntitySet Name="cameraTruocs" EntityType="Self.cameraTruoc" />
+    <EntitySet Name="ChitietDonhangs" EntityType="Self.ChitietDonhang" />
+    <EntitySet Name="chitietsanphams" EntityType="Self.chitietsanpham" />
+    <EntitySet Name="donhangs" EntityType="Self.donhang" />
+    <EntitySet Name="giohangs" EntityType="Self.giohang" />
+    <EntitySet Name="hedieuhanhs" EntityType="Self.hedieuhanh" />
+    <EntitySet Name="ketnois" EntityType="Self.ketnoi" />
+    <EntitySet Name="LoaiSanPhams" EntityType="Self.LoaiSanPham" />
+    <EntitySet Name="manhinhs" EntityType="Self.manhinh" />
+    <EntitySet Name="muahangs" EntityType="Self.muahang" />
+    <EntitySet Name="sanphams" EntityType="Self.sanpham" />
+    <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+    <EntitySet Name="thietketrongluongs" EntityType="Self.thietketrongluong" />
+    <EntitySet Name="thongtins" EntityType="Self.thongtin" />
+    <EntitySet Name="thongtinsacs" EntityType="Self.thongtinsac" />
+    <EntitySet Name="Tieniches" EntityType="Self.Tienich" />
+    <EntitySet Name="yeuthiches" EntityType="Self.yeuthich" />
+  </EntityContainer>
+</Schema>
